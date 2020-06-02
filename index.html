@@ -2,6 +2,10 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <style>
 * {box-sizing: border-box}
 
@@ -37,18 +41,18 @@ body, html {
   height: 100%;
 }
 
-#Home {background-color: red;}
-#News {background-color: green;}
-#Contact {background-color: blue;}
-#About {background-color: orange;}
+#Home {background-color: black;}
+#News {background-color: black;}
+#Contact {background-color: black;}
+#About {background-color: black;}
 </style>
 </head>
 <body>
 
-<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
-<button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">News</button>
-<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
-<button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+<button class="tablink" onclick="openPage('Home', this, 'black')">Home</button>
+<button class="tablink" onclick="openPage('News', this, 'black')" id="defaultOpen">News</button>
+<button class="tablink" onclick="openPage('Contact', this, 'black')">Contact</button>
+<button class="tablink" onclick="openPage('About', this, 'black')">About</button>
 
 <div id="Home" class="tabcontent">
   <h3>Home</h3>
@@ -56,18 +60,91 @@ body, html {
 </div>
 
 <div id="News" class="tabcontent">
-  <h3>News</h3>
+  <h3>PROJECTS</h3>
   <p>Some news this fine day!</p> 
 </div>
 
 <div id="Contact" class="tabcontent">
-  <h3>Contact</h3>
+  <h3>MORE</h3>
   <p>Get in touch, or swing by for a cup of coffee.</p>
 </div>
 
 <div id="About" class="tabcontent">
-  <h3>About</h3>
-  <p>Who we are and what we do.</p>
+  <h3>CONTACT</h3>
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><a href="tel: +919742432391" target="_blank""><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i></a> Phone: +91 9742432391</p>
+      <p><a href = "mailto: varunbadave99@gmail.com target="_blank""><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i></a> Email: varunbadave99@gmail.com</p>
+    </div><br>
+    <p>Lets get in touch.</p>
+
+     <h2>Name:</h2>
+      <input type ="text" id="name" required="required"><br>
+      <h2>Gender:</h2>
+      <input type ="text" id="gender" required="required"><br>
+       <h2>City:</h2>
+      <input type ="text" id="city" required="required"><br>
+
+      <button type="button" onclick="writex();">Submit</button>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB-1SrFZVxtiRZisdBCtvJNgg0xdYlTKsM",
+    authDomain: "baba-15840.firebaseapp.com",
+    databaseURL: "https://baba-15840.firebaseio.com",
+    projectId: "baba-15840",
+    storageBucket: "baba-15840.appspot.com",
+    messagingSenderId: "466245815790",
+    appId: "1:466245815790:web:7d9f77c776bc0d6cfe92ff",
+    measurementId: "G-VLVRK37XL5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script>
+   function writex() {
+    var name=document.getElementById("name").value;
+    var gender=document.getElementById("gender").value;
+    var city=document.getElementById("city").value;
+
+     if(name==''|| gender==''|| city==''){
+         alert('required');
+         return false;
+     }
+     else{
+        firebase.database().ref('user/'+name).set({
+            userName: name,
+            userGender: gender,
+            userCity: city
+        });
+        swal("Data saved","Successfully");
+         return true;
+     }
+
+    firebase.database().ref('user/'+name).set({
+        userName: name,
+        userGender: gender,
+        userCity: city
+    });
+    
+
+
+}
+</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- End Contact Section -->
+  </div>
 </div>
 
 <script>
