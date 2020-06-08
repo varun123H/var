@@ -56,8 +56,8 @@ body, html {
 
 <button class="tablink" onclick="openPage('HOME', this, 'black')">HOME</button>
 <button class="tablink" onclick="openPage('WORK', this, 'black')" id="defaultOpen">WORK</button>
-<button class="tablink" onclick="openPage('MORE', this, 'black')">MORE</button>
-<button class="tablink" onclick="openPage('CONTACT', this, 'black')">CONTACT</button>
+<button class="tablink" onclick="openPage('MORE', this, 'black')">CONTACT</button>
+<button class="tablink" onclick="openPage('CONTACT', this, 'black')">MORE</button>
 
 <div id="HOME" class="tabcontent">
   <h3>Home</h3>
@@ -70,18 +70,6 @@ body, html {
 </div>
 
 <div id="MORE" class="tabcontent">
-  <h3>MORE</h3>
-  <p>Get in touch, or swing by for a cup of coffee.</p>
-</div>
-
-<div id="CONTACT" class="tabcontent">
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">Contact Me</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <div class="w3-section">
-      <p><a href="tel: +919742432391" target="_blank""><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i></a> Phone: +91 9742432391</p>
-      <p><a href = "mailto: varunbadave99@gmail.com target="_blank""><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i></a> Email: varunbadave99@gmail.com</p>
-    </div><br>
     <div class="vanu">    
     <p>Lets get in touch.</p>
        <h2>Name:</h2>
@@ -148,8 +136,12 @@ body, html {
 </script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- End Contact Section -->
-  </div>
+  </div> 
 </div>
+
+<div id="CONTACT" class="tabcontent">
+  
+  </div>
 
 <script>
 function openPage(pageName,elmnt,color) {
